@@ -2,13 +2,37 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>google_search</title>
+    <title>Title</title>
+    <style>
+        .class{
+            width: 50%;
+            height: 300px;
+            font-size: 50px;
+        }
+    </style>
 </head>
 <body>
-<form method="get" action="http://www.google.com.vn/search">
-    <input type="text" name="tìm kiếm"/>
-    <input type="submit" value="Tìm kiếm"/>
-</form>
+<textarea id="demo" onkeydown="nhap()" class="class"></textarea>
 
 </body>
 </html>
+<script>
+    let arr=["T","Ô","I"," ",'L',"À"," ","T",'H',"A","N","H",".",' ',"T","Ô","I"," ","B","Ị"," ","Đ","I","Ê","N","!","!"];
+    let res = "";
+    function nhap() {
+        let a = document.getElementById("demo");
+        if (a.value.length > 0) {
+            for (let i = 0; i < a.value.length; i++) {
+                res += arr[i]
+                if (i === arr.length+1) {
+                    a.value = "";
+                    res = "";
+                }
+            }
+        }
+        a.value=res;
+        res="";
+        setTimeout("nhap()",1);
+    }
+
+</script>
